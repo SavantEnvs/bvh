@@ -1,0 +1,35 @@
+[package]
+name = "bvh-mayhem-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+arbitrary = { version = "1.4.1", features = ["derive"] }
+approx = "0.5"
+libfuzzer-sys = "0.4"
+nalgebra = "0.34"
+ordered-float = { version = "5.1.0", features = ["arbitrary"] }
+
+[dependencies.bvh]
+path = "../.."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "bvh-fuzz"
+path = "fuzz_targets/bvh-fuzz.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "upstream-fuzz"
+path = "fuzz_targets/upstream-fuzz.rs"
+test = false
+doc = false

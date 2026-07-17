@@ -1,0 +1,6 @@
+project: savantenvs/bvh
+target: upstream-fuzz
+
+cmds:
+  - cmd: /mayhem/upstream-fuzz
+    libfuzzer: true
