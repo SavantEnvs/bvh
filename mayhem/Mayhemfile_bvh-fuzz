@@ -1,0 +1,7 @@
+# origin: https://app.mayhem.security/mayhemheroes/bvh/bvh-fuzz/7
+project: savantenvs/bvh
+target: bvh-fuzz-buggy-mhh-run-7
+
+cmds:
+  - cmd: /mayhem/bvh-fuzz
+    libfuzzer: true
