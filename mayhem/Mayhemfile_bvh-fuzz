@@ -1,0 +1,10 @@
+project: savantenvs/bvh
+target: bvh-fuzz-buggy-mhh-run-7
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bvh-fuzz-buggy-mhh-run-7/testsuite
+
+cmds:
+  - cmd: /mayhem/bvh-fuzz
+    libfuzzer: true
